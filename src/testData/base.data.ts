@@ -15,6 +15,17 @@ export function userByKey(key: string): DemoUser {
     return user;
 }
 
+export type Role = 'standard' | 'problem';
+export interface AuthUser {
+    readonly role: Role;
+    readonly username: string;
+    readonly password: string;
+}
+export const authUsers: readonly AuthUser[] = [
+    { role: 'standard', username: 'standard_user', password: PASSWORD },
+    { role: 'problem', username: 'problem_user', password: PASSWORD },
+];
+
 export const LOGIN_ERRORS = {
     lockedOut: 'Epic sadface: Sorry, this user has been locked out.',
     invalidCredentials: 'Epic sadface: Username and password do not match any user in this service',

@@ -14,20 +14,32 @@ export class InventoryPage extends BasePage {
     readonly itemNames: Locator = this.page.getByTestId('inventory-item-name');
     readonly itemPrices: Locator = this.page.getByTestId('inventory-item-price');
     readonly sortSelect: Locator = this.page.getByTestId('product-sort-container');
+    readonly cartLink: Locator = this.page.getByTestId('shopping-cart-link');
+    readonly cartBadge: Locator = this.page.getByTestId('shopping-cart-badge');
+
     async sortBy(option: SortOption): Promise<void> {
         await this.sortSelect.selectOption(option);
     }
+
     async productNames(): Promise<string[]> {
         return this.itemNames.allTextContents();
     }
+
     async productPrices(): Promise<number[]> {
         const raw = await this.itemPrices.allTextContents();
         return raw.map((price) => Number(price.replace('$', '').trim()));
     }
+
     async addProduct(productId: string): Promise<void> {
-        await this.page.getByTestId(`add-to-cart-${productId}`).click();
+        await this.page.getByTestId(`add-to-cart-${ productId }`).click();
     }
+
     async removeProduct(productId: string): Promise<void> {
-        await this.page.getByTestId(`remove-${productId}`).click();
+        await this.page.getByTestId(`remove-${ productId }`).click();
+    }
+
+    async openCart(): Promise<void> {
+        await this.cartLink.click();
+        await this.page.waitForURL(/cart.html/);
     }
 }
