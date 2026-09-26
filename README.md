@@ -1,5 +1,10 @@
 # MIGx QA Challenge — SauceDemo UI Automation + ReqRes API
 
+### Companion API test suite (ReqRes / pytest): https://github.com/Marionilla/api-migx
+
+---
+---
+
 QA submission for the MIGx "Web Application Quality Assurance Challenge".
 End-to-end quality for two systems handed over without source access:
 
