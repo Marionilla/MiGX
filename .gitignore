@@ -6,6 +6,10 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-
+.features-gen/
 .env
-.env.*
+.env.local
+.idea/
+.vscode/
+.DS_Store
+*.log

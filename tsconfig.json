@@ -1,28 +1,20 @@
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "declaration": false,
-    "sourceMap": true,
-    "types": ["node", "@playwright/test"]
-  },
-  "include": [
-    "src/**/*.ts",
-    "features/**/*.ts",
-    "playwright.config.ts",
-    ".features-gen/**/*.ts"
-,     "features/login.feature"  ],
-  "exclude": ["node_modules", "test-results", "playwright-report"]
+"compilerOptions": {
+"target": "ES2022",
+"module": "NodeNext",
+"moduleResolution": "NodeNext",
+"lib": ["ES2022", "DOM", "DOM.Iterable"],
+"strict": true,
+"noUnusedLocals": true,
+"noUnusedParameters": true,
+"noUncheckedIndexedAccess": true,
+"esModuleInterop": true,
+"skipLibCheck": true,
+"forceConsistentCasingInFileNames": true,
+"resolveJsonModule": true,
+"sourceMap": true,
+"types": ["node"]
+},
+"include": ["src//*.ts", "features//.ts", "playwright.config.ts", ".features-gen/**/.ts"],
+"exclude": ["node_modules", "test-results", "playwright-report"]
 }
