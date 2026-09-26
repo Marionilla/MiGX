@@ -1,0 +1,56 @@
+{
+  "name": "migx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "bddgen && playwright test",
+    "test:headed": "bddgen && playwright test --headed",
+    "test:smoke": "bddgen --tags \"@smoke\" && playwright test",
+    "test:regression": "bddgen --tags \"@regression\" && playwright test",
+    "report": "playwright show-report",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "qa",
+    "playwright",
+    "playwright-bdd",
+    "cucumber",
+    "typescript",
+    "test-automation"
+  ],
+  "author": "Maryna Mykhailova",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-playwright": "^2.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "playwright-bdd": "^9.2.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}
