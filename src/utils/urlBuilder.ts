@@ -1,4 +1,4 @@
-import { uiPages, type UiPage } from '../pages/pages';
+import { uiPages, type UiPage } from './uiPages';
 
 export function buildUrl(page: UiPage, params?: Record<string, string>): string {
     const path = uiPages[page];
@@ -7,6 +7,6 @@ export function buildUrl(page: UiPage, params?: Record<string, string>): string 
     }
 
     const query = new URLSearchParams(params).toString();
-    
+
     return `${path}?${query}`;
 }

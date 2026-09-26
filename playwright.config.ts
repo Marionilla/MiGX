@@ -5,15 +5,15 @@ import environmentBaseUrl, { type EnvName } from './src/utils/environmentBaseUrl
 
 // bddgen compiles .feature files into specs the Playwright runner executes.
 const testDir = defineBddConfig({
-features: 'features//*.feature',
-steps: ['src/fixtures//.ts', 'features/steps/**/.ts'],
+  features: 'features/**/*.feature',
+  steps: ['src/fixtures/**/*.ts', 'features/steps/**/*.ts'],
 });
 
 // Env selection (reference pattern, cleaned: correct ENV case + dotenv load).
 const ENV: EnvName =
-(process.env.ENV as EnvName) in environmentBaseUrl
-? (process.env.ENV as EnvName)
-: 'qa4';
+  (process.env.ENV as EnvName) in environmentBaseUrl
+    ? (process.env.ENV as EnvName)
+    : 'qa4';
 const baseURL = process.env.BASE_URL ?? environmentBaseUrl[ENV].home;
 
 const isCI = !!process.env.CI;

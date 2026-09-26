@@ -1,6 +1,6 @@
 import type { Page } from '@playwright/test';
 import { buildUrl } from './urlBuilder';
-import type { UiPage } from '../pages/pages';
+import type { UiPage } from './uiPages';
 
 type PageObjectConstructor<T> = new (page: Page) => T;
 /** Navigate to a known page and return its Page Object (reference openPage).
