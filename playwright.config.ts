@@ -3,7 +3,7 @@ import { defineBddConfig } from 'playwright-bdd';
 import 'dotenv/config';
 import environmentBaseUrl, { type EnvName } from './src/utils/environmentBaseUrl';
 
-const stepGlobs = ['src/fixtures//*.ts', 'features/steps//*.ts'];
+const stepGlobs = ['src/fixtures/**/*.ts', 'features/steps/**/*.ts'];
 const guestDir = defineBddConfig({
   outputDir: '.features-gen/guest',
   features: 'features//*.feature',
@@ -33,7 +33,7 @@ export default defineConfig({
   workers: isCI ? 1 : undefined,
   timeout: 30000,
   reporter: [['list'], ['html', { open: 'never', outputFolder: 'playwright-report' }]],
-  
+
   use: {
     baseURL,
     testIdAttribute: 'data-test',

@@ -6,9 +6,9 @@ export class CartPage extends BasePage {
     readonly checkoutButton: Locator = this.page.getByTestId('checkout');
 
     async removeProduct(productId: string): Promise<void> {
-        await this.page.getByTestId(`remove - ${ productId }`).click();
+        await this.page.getByTestId(`remove-${ productId }`).click();
     }
-    
+
     async checkout(): Promise<void> {
         await this.checkoutButton.click();
     }
