@@ -10,8 +10,8 @@
   "scripts": {
     "test": "bddgen && playwright test",
     "test:headed": "bddgen && playwright test --headed",
-    "test:smoke": "bddgen --tags \"@smoke\" && playwright test",
-    "test:regression": "bddgen --tags \"@regression\" && playwright test",
+    "test:smoke": "bddgen && playwright test --grep @smoke",
+    "test:regression": "bddgen && playwright test --grep @regression",
     "report": "playwright show-report",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
