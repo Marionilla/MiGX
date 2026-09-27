@@ -46,6 +46,7 @@ column to fill during execution.
 | TC-D03 | Empty first name | Blank first name, Continue | Error "Error: First Name is required" | P1 | ✅ | |
 | TC-D04 | Empty last name | Blank last name, Continue | Error "Error: Last Name is required" | P1 | ✅ | |
 | TC-D05 | Empty postal code | Blank ZIP, Continue | Error "Error: Postal Code is required" | P1 | ✅ | |
+| TC-D06 | Checkout form behavior for problem_user | Fill all three checkout fields as `problem_user`, click Continue | All fields retain input; navigation to `checkout-step-two.html` succeeds | P2 | ✍️ | |
 
 ## E. Session / Authentication (UI infrastructure)
 | ID | Title | Steps | Expected result | Priority | Auto | Result |
@@ -77,9 +78,10 @@ column to fill during execution.
 | Login & Access Control | TC-A01…A07 → `login.feature` |
 | Sorting & Data Display | TC-B01…B05 → `sorting.feature` |
 | Cart | TC-C01…C03 → `cart.feature` |
-| Checkout | TC-D01…D05 → `checkout.feature` |
+| Checkout | TC-D01…D06 → `checkout.feature` |
 | Session / auth reuse | TC-E01 → `auth.setup.ts` (storageState) |
 | API Contract Validation | TC-F01…F13 → `api-tests/` (pytest) |
-| Network-level bug evidence | TC-A06 / TC-B05 → `bug-report.md` |
+| Deep bug write-up (highest severity) | TC-D06 → `bug-report.md` (DEF-04) |
+| Network-level bug evidence | TC-A06 / TC-B05 → `bug-report-network-evidence.md` (DEF-02) |
 
-**Counts:** P1 = 20 · P2 = 8 · P3 = 1 · Automated = 26 · Manual = 3
+**Counts:** P1 = 25 · P2 = 9 · P3 = 1 · Automated = 30 · Manual = 5

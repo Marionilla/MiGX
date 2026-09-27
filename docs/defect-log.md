@@ -11,6 +11,29 @@ S1–S4 scale defined in `test-plan.md` §7.
 > against `standard_user`), so the build stays meaningful while every finding is
 > still recorded and traceable to a test case.
 
+## Bug Severity Notes
+
+Severity is based on **impact**, not just on the bug itself. The same defect
+can be minor in one situation and critical in another — what matters is how
+many users are affected, whether key functionality is blocked, and what the
+business impact would be.
+
+For example, displaying an incorrect product image might look like a minor
+visual issue in a demo application. In a real online store, however,
+customers rely on product images to make purchasing decisions, so the same
+defect could reasonably carry a much higher severity.
+
+Similarly, a checkout field that does not accept input may completely
+prevent a customer from placing an order. In a production environment, such
+an issue would likely be classified as **Critical**, because it directly
+affects revenue.
+
+For the SauceDemo challenge, some defects are **intentionally built into
+specific demo accounts** (`problem_user`, `performance_glitch_user`). These
+findings were assessed within the context of the challenge and may not
+reflect the severity they would receive in a real-world production system —
+the severities below are annotated accordingly (see "Triage notes").
+
 ## Status legend
 | Status | Meaning |
 |--------|---------|
